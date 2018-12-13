@@ -8,7 +8,7 @@ RUN useradd icecast
 RUN sed -i -r 's/no(body|group)/icecast/g' /usr/local/etc/icecast.xml
 RUN sed -i '/<chroot>0<\/chroot>/{n;d;};' /usr/local/etc/icecast.xml
 RUN sed -i '/<\/changeowner>/{n;d;};' /usr/local/etc/icecast.xml
-RUN rm -r /tmp
+RUN rm -rf /tmp
 
 EXPOSE 8000/tcp
 CMD ["icecast", "-c", "/usr/local/etc/icecast.xml"]
