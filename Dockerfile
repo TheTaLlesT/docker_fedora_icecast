@@ -1,6 +1,6 @@
 FROM fedora:latest
 RUN yum -y install libcurl libtheora libvorbis libogg libxslt libxml2 speex git make gcc libcurl-devel libtheora-devel libvorbis-devel libogg-devel libxslt-devel libxml2-devel
-RUN git clone https://github.com/karlheyes/icecast-kh.git /tmp/icecast-kh
+RUN git clone https://github.com/TheTaLlesT/icecast-kh.git /tmp/icecast-kh
 RUN cd /tmp/icecast-kh && ./configure && make install
 RUN yum -y remove git make gcc libcurl-devel libtheora-devel libvorbis-devel libogg-devel libxslt-devel libxml2-devel
 RUN yum -y clean all
